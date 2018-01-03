@@ -52,7 +52,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="recordButton" destination="hn6-IX-6VK" id="JgT-q0-2LQ"/>
                         <outlet property="recordingLabel" destination="nla-hV-BZA" id="FR6-h7-5wn"/>
+                        <outlet property="stopRecordingButton" destination="MYt-3i-4Tj" id="tyo-1o-ohS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
