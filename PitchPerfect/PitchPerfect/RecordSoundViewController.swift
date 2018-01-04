@@ -41,6 +41,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord, with:AVAudioSessionCategoryOptions.defaultToSpeaker)
         
         try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
+        audioRecorder.delegate = self
         audioRecorder.isMeteringEnabled = true
         audioRecorder.prepareToRecord()
         audioRecorder.record()        
@@ -49,6 +50,16 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         stopRecordingButton.isEnabled = false
         recordButton.isEnabled = true
         recordingLabel.text = "Tap to Record"
+    }
+    
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if flag{
+            performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
+        }
+        else {
+            print("recording was not successful")
+        }
+        
     }
     
 }
