@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class RecordSoundViewController: UIViewController {
+    
+    var audioRecorder : AVAudioRecorder!
 
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
@@ -23,11 +26,6 @@ class RecordSoundViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print ("viewWillAppear called")
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func recordAudio(_ sender: Any) {
